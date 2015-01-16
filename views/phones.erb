@@ -3,23 +3,23 @@
 <form action="/contacts" method="post">
   <input id='phone_id' name='phone_id' type='hidden' value='<%= @phone.id() %>'>
 
-  <label for='phone_number'>Contact's Phone Number:</label>
-  <input id='phone_number' name='phone_number' type='text'>
+  <p><label for='phone_number'>Contact's Phone Number:</label>
+  <input id='phone_number' name='phone_number' type='text'></p>
 
-  <label for='birthday'>Contact's Birthday:</label>
-  <input id='birthday' name='birthday' type='text'>
+  <p>(Optional) <label for='birthday'>Contact's Birthday:</label>
+  <input id='birthday' name='birthday' type='text'></p>
 
-  <label for='year'>Year:</label>
-  <input id='year' name='year' type='text'>
+  (Optional) <label for='year'>Year:</label>
+  <input id='year' name='year' type='text'></p>
 
   <button type="submit">Add Info</button>
 </form>
 
-<h3>Here are all the Phone numbers for this contact:</h3>
+<h3>Here are all the Phone numbers and other info for this contact:</h3>
 
 <ul>
   <% @phone.numbers().each() do |number| %>
-  <li><a href="/contacts/<%= number.id() %>"><%= number.phone_number() %> <%= number.birthday() %> <%= number.year() %></a></li>
+  <li><a href="/contacts/<%= number.id() %>">Phone: <%= number.phone_number() %> <p> <%= number.birthday() %>  <%= number.year() %></p></a></li>
   <% end %>
 </ul>
 
