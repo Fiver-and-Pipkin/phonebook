@@ -1,8 +1,9 @@
 class Contact
   @@contacts = []
 
-  define_method(:initialize) do |phone_number, birthday, year|
+  define_method(:initialize) do |phone_number, type, birthday, year|
     @phone_number = phone_number
+    @type = type
     @birthday = birthday
     @year = year
     @id = @@contacts.length().+(1)
@@ -10,6 +11,10 @@ class Contact
 
   define_method(:phone_number) do
     @phone_number
+  end
+
+  define_method(:type) do
+    @type
   end
 
   define_method(:birthday) do

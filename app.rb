@@ -18,9 +18,10 @@ end
 
 post("/contacts") do
   phone_number = params.fetch("phone_number")
+  type = params.fetch("type")
   birthday = params.fetch("birthday")
   year = params.fetch("year")
-  @contact = Contact.new(phone_number, birthday, year)
+  @contact = Contact.new(phone_number, type, birthday, year)
   @contact.save()
   @phone = Phone.find(params.fetch("phone_id").to_i())
   @phone.add_contact(@contact)

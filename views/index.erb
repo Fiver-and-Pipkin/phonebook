@@ -8,6 +8,8 @@
   <button type="submit">Add Contact</button>
 </form>
 
+
+<h2>Here are your stored contacts:</h2>
 <ul>
     <% @phones.each() do |phone| %>
     <li><a href="/phones/<%= phone.id() %>"><%= phone.name() %></a></li>
