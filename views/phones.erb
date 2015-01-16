@@ -1,0 +1,26 @@
+<h1>Add a phone number and birthday for  <%= @phone.name() %> </h1>
+
+<form action="/contacts" method="post">
+  <input id='phone_id' name='phone_id' type='hidden' value='<%= @phone.id() %>'>
+
+  <label for='phone_number'>Contact's Phone Number:</label>
+  <input id='phone_number' name='phone_number' type='text'>
+
+  <label for='birthday'>Contact's Birthday:</label>
+  <input id='birthday' name='birthday' type='text'>
+
+  <label for='year'>Year:</label>
+  <input id='year' name='year' type='text'>
+
+  <button type="submit">Add Info</button>
+</form>
+
+<h3>Here are all the Phone numbers for this contact:</h3>
+
+<ul>
+  <% @phone.numbers().each() do |number| %>
+  <li><a href="/contacts/<%= number.id() %>"><%= number.phone_number() %> <%= number.birthday() %> <%= number.year() %></a></li>
+  <% end %>
+</ul>
+
+<a href="/">Return to Main Page</a>

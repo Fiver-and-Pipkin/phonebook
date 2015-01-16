@@ -1,21 +1,15 @@
-<h1>Contacts</h1>
+<h1>Phones</h1>
 
-<h3>Add a Friend's Name and Number here:</h3>
+<h3>Add a contact here:</h3>
 
-<form action="/contacts" method="post">
-  <label for="name">Contact Name:</label>
+<form action="/phones" method="post">
+  <label for="name">Contact's's name:</label>
   <input id="name" name="name" type="text">
-
-  <label for="phone">Phone Number:</label>
-  <input id="phone" name="phone" type="text">
-
   <button type="submit">Add Contact</button>
 </form>
 
-
-<h3>Here are the contacts in your directory: </h3>
 <ul>
-  <% @contacts.each() do |contact| %>
-  <li><a href="/contacts/<%= contact.id() %>"><%= contact.name() %></a></li>
-  <% end %>
+    <% @phones.each() do |phone| %>
+    <li><a href="/phones/<%= phone.id() %>"><%= phone.name() %></a></li>
+    <% end %>
 </ul>
