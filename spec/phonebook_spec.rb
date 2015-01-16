@@ -43,7 +43,7 @@ describe(Contact) do
     it("returns a contact by its id number") do
       test_contact = Contact.new("Dr Who", 8005551212)
       test_contact.save()
-      test_contact2 = Contact.new("Dr Who", 8005551212)
+      test_contact2 = Contact.new("Daleck", 9009999999)
       test_contact2.save()
       expect(Contact.find(test_contact.id())).to eq(test_contact)
     end
