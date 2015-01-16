@@ -37,3 +37,8 @@ get("/phones/:id") do
   @phone = Phone.find(params.fetch("id").to_i())
   erb(:phones)
 end
+
+post("/") do
+  @phones = Phone.clear()
+  erb(:index)
+end
