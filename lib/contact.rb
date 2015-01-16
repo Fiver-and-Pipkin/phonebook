@@ -50,11 +50,4 @@ class Contact
     end
     found_contact
   end
-
-  # define_method(:age) do
-  #   current_year = Time.new().year()
-  #   age = current_year.-(@year)
-  # end
-
-
 end
